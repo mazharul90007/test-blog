@@ -10,10 +10,10 @@ const Navbar = () => {
     const toggleMenu = () => setMenuOpen(!menuOpen);
     
     return (
-        <nav className="navbar bg-base-100 shadow px-6 py-4">
+        <nav className="navbar bg-teal-100 shadow px-6 py-4">
             {/* Left Side: Logo */}
             <div className="flex-1">
-                <Link to="/" className="text-2xl font-bold text-green-700 flex items-center gap-2">
+                <Link to="/" className="text-2xl font-bold text-amber-700 flex items-center gap-2">
                     <span>My Blog</span>
                 </Link>
             </div>
