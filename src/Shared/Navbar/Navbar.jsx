@@ -8,7 +8,7 @@ const Navbar = () => {
     const [menuOpen, setMenuOpen] = useState(false);
 
     const toggleMenu = () => setMenuOpen(!menuOpen);
-    
+
     return (
         <nav className="navbar bg-teal-100 shadow px-6 py-4">
             {/* Left Side: Logo */}
@@ -35,7 +35,7 @@ const Navbar = () => {
             </div>
 
             {/* Dark Mode Toggle */}
-            <button onClick={() => setDarkMode(!darkMode)} className={`text-xl border p-2 ml-2 rounded-full shadow hover:scale-110 transition-transform transform ${darkMode ? 'bg-white' : 'text-white bg-black'}`}>
+            <button onClick={() => setDarkMode(!darkMode)} className={`text-xl border p-2 ml-4 rounded-full shadow hover:scale-110 transition-transform transform ${darkMode ? 'bg-white' : 'text-white bg-black'}`}>
                 {darkMode ? <FaMoon className="text-black" /> : <FaSun />}
             </button>
 
@@ -45,22 +45,23 @@ const Navbar = () => {
             </button>
 
             {/* Mobile Menu (Drawer) */}
-            {menuOpen && (
-                <div className="absolute top-16 right-4 bg-base-100 shadow-xl p-4 rounded-lg flex flex-col space-y-4 lg:hidden">
-                    <Link to="/" className="flex items-center gap-2 hover:text-primary">
-                        Home
-                    </Link>
-                    <Link to="/about" className="flex items-center gap-2 hover:text-primary">
-                        About
-                    </Link>
-                    <Link to="/blog" className="flex items-center gap-2 hover:text-primary">
-                        Blog
-                    </Link>
-                    <Link to="/contact" className="flex items-center gap-2 hover:text-primary">
-                        Contact
-                    </Link>
-                </div>
-            )}
+            <div
+                className={`fixed top-20 -right-1 bg-base-100 shadow-xl p-4 rounded-l-lg flex flex-col space-y-4 lg:hidden transition-all duration-500 ease-in-out transform ${menuOpen ? "translate-x-0" : "translate-x-full"}`}
+                style={{ pointerEvents: menuOpen ? "auto" : "none" }}
+            >
+                <Link to="/" className="flex items-center gap-2 hover:text-primary">
+                    Home
+                </Link>
+                <Link to="/about" className="flex items-center gap-2 hover:text-primary">
+                    About
+                </Link>
+                <Link to="/blog" className="flex items-center gap-2 hover:text-primary">
+                    Blog
+                </Link>
+                <Link to="/contact" className="flex items-center gap-2 hover:text-primary">
+                    Contact
+                </Link>
+            </div>
         </nav>
     );
 };
