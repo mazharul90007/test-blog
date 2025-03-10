@@ -4,9 +4,11 @@ import Navbar from "../../Shared/Navbar/Navbar";
 
 const MainLayout = () => {
     return (
-        <div>
+        <div className="bg-blue-50">
             <Navbar></Navbar>
-            <Outlet></Outlet>
+            <div className="min-h-screen">
+                <Outlet></Outlet>
+            </div>
         </div>
     );
 };
