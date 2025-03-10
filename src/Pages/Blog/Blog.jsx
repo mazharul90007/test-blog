@@ -17,7 +17,7 @@ const Blog = () => {
               <h2 className="card-title text-white">{post.title}</h2>
               <p>{post.body}</p>
               <div className="card-actions justify-end">
-                <button className="btn btn-primary">Buy Now</button>
+                <button className="btn btn-primary">See More</button>
               </div>
             </div>
           </div>
